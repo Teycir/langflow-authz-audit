@@ -73,9 +73,10 @@ Residual untested: legacy `/api/v1/mcp/sse`, `POST /api/v1/responses`, OAuth bro
 ```
 report_20261117_190231.md   full PTES/OWASP-style report, Status FINAL
 pocs/reproduce_error_semantics.py
-evidence/                   71 request/response artifacts, timeline, redacted key JSON
-evidence/SHA256SUMS         manifest (regenerated post-redaction)
-evidence/report.sha256
+SHA256SUMS                  report + PoC hashes (repo root)
+evidence/                   70 artifacts: request/response pairs, timeline, redacted key JSON
+evidence/SHA256SUMS         evidence-only manifest (paths relative to evidence/)
+evidence/report.sha256      report self-hash
 ```
 
 Secrets (JWTs, `sk-` API keys) redacted before publication; no credentials in this repo.
@@ -83,8 +84,9 @@ Secrets (JWTs, `sk-` API keys) redacted before publication; no credentials in th
 ## Integrity
 
 ```bash
-cd evidence && sha256sum -c SHA256SUMS   # all artifacts
-sha256sum -c report.sha256               # report (run from repo root)
+sha256sum -c SHA256SUMS                          # report + PoC (repo root)
+(cd evidence && sha256sum -c SHA256SUMS)         # all evidence artifacts
+sha256sum -c evidence/report.sha256               # report self-hash
 ```
 
 ## Fix
