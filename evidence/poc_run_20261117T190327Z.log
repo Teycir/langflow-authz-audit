@@ -1,0 +1,10 @@
+[PASS] F1 attacker/victim not 404: HTTP 200 {"project_id":"6fc8d7dd-3079-44b0-8383-e82e0789d879","uses_composer":true,"streamable_http_url":null
+[PASS] F1 attacker/random not 404: HTTP 200 {"project_id":"07acb99b-275d-4bab-aea8-35fe13c71470","uses_composer":true,"streamable_http_url":null
+[PASS] F1 attacker bodies identical shape: both carry the swallow-all error_message
+[PASS] F1 owner control healthy: HTTP 200
+[PASS] F2 foreign project -> 500: HTTP 500 {"detail":"404: Project not found"}
+[PASS] F2 owner control 200: HTTP 200
+[PASS] F3 foreign file -> 500 leak: HTTP 500 {"detail":"Error downloading files: 404: No files found"}
+[PASS] F3 owner control 200 zip: HTTP 200
+
+ALL THREE DEFECTS REPRODUCED

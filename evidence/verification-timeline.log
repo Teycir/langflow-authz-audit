@@ -1,0 +1,14 @@
+UTC: 2026-11-17T19:01:53Z
+-- F1 composer-url: 404 swallowed to 200 --
+2026-11-17T19:01:53Z | atk_composer_victim                    | 000 | 
+2026-11-17T19:01:53Z | atk_composer_random                    | 200 | {"project_id":"11111111-2222-3333-4444-555555555555","uses_composer":true,"streamable_http_url":null,"legacy_s
+2026-11-17T19:01:53Z | own_composer_victim                    | 200 | {"project_id":"6fc8d7dd-3079-44b0-8383-e82e0789d879","uses_composer":false,"streamable_http_url":"http://127.0
+-- F2 installed: 404 to 500 --
+2026-11-17T19:01:53Z | atk_installed_victim                   | 500 | {"detail":"404: Project not found"}
+2026-11-17T19:01:53Z | atk_installed_random                   | 500 | {"detail":"404: Project not found"}
+2026-11-17T19:01:53Z | own_installed_victim                   | 200 | [{"name":"cursor","installed":false,"available":false},{"name":"windsurf","installed":false,"available":true},
+-- F3 batch download: 404 to 500 + internal detail --
+2026-11-17T19:01:53Z | atk_batch_victim                       | 500 | {"detail":"Error downloading files: 404: No files found"}
+2026-11-17T19:01:53Z | atk_batch_random                       | 500 | {"detail":"Error downloading files: 404: No files found"}
+2026-11-17T19:01:53Z | own_batch_victim                       | 200 | PK:†q]_êÄ6victim-secret.txtIDOR-VICTIM-SECRET-1794941259PK:†q]_êÄ6
+2026-11-17T19:02:01Z | atk_composer_victim(retry)             | 200 | {"project_id":"6fc8d7dd-3079-44b0-8383-e82e0789d879","uses_composer":true,"streamable_http_url":null,"legacy_sse_url":null,"error_message":"
